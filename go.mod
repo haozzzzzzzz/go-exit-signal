@@ -1,4 +1,4 @@
-module github.com/haozzzzzzzz/go-exit-signal
+module github.com/haozzzzzzzz/go-exit-signal/v1
 
 go 1.16
 
