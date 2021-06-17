@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/haozzzzzzzz/go-exit-signal/v1/usignal"
+	"github.com/haozzzzzzzz/go-exit-signal/usignal"
 	"time"
 )
 
