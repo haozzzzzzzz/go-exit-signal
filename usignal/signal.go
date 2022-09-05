@@ -38,6 +38,8 @@ func ProcessExitC() (
 	atomic.AddInt64(&taskCount, 1)
 	exitedCallback = func() {
 		atomic.AddInt64(&taskCount, -1)
+		signal.Stop(signalC)
+		close(signalC)
 	}
 	success = true
 	return

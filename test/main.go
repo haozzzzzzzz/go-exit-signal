@@ -8,7 +8,7 @@ import (
 
 func main() {
 	for i := 0; i < 10; i++ {
-		go func() {
+		go func(i int) {
 			success, exitC, exited := usignal.ProcessExitC()
 			defer exited()
 			fmt.Println(success)
@@ -19,14 +19,14 @@ func main() {
 			for {
 				select {
 				case <-exitC:
-					fmt.Println("exit c")
+					fmt.Println("exit c", i)
 					return
 
 				case <-ticker.C:
-					fmt.Println("tick")
+					fmt.Println("tick", i)
 				}
 			}
-		}()
+		}(i)
 	}
 
 	usignal.WaitTasksExit()
